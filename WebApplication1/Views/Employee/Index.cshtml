@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<a href="/Employee/create" class="btn btn-primary">Add </a>
+<div>
+    <table class="table" id="mytable"></table>
+</div>
+@section scripts{
+    <link href="~/Scripts/jquery.dataTables.min.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery.dataTables.min.js"></script>
+    <script>
+        $(function () {
+            let dt = $("#mytable").DataTable({
+
+                ajax: { url: "/Employee/getallemployee", dataSrc: "" },
+                columns: [
+                    { data: "id", title: "id" },
+                    { data: "fullname", title: "fullname" },
+                    { data: "profession", title: "profession" },
+                    { data: "age", title: "age" },
+                    {
+                        data: "id", title: "Action", render: function (d) {
+                            var action = "";
+                            action += "<a href='/Employee/Edit/" + d + "' class='btn btn-primary'>view</a>"
+                            return action;
+                        }
+
+                       
+                    },
+
+//                    {
+//                        data: "id", title: "dada", render: function (d) {
+//                            var actio = "";
+//                            actio += “<a href='/Employee/Edit/” + d + “’ class=‘btn btn-primary’ >view</a>”
+//return actio;
+//}
+//}
+
+
+                ]
+
+            });
+
+
+
+        });
+    </script>
+
+
+
+
+
+}

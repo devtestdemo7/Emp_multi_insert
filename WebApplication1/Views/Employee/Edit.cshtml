@@ -1,0 +1,116 @@
+﻿
+@{
+    ViewBag.Title = "Edit";
+    var emplist = ViewData["employee"] as IEnumerable<WebApplication1.Models.employee>;
+    var educationlist = ViewData["education"] as IEnumerable<WebApplication1.Models.education>;
+    var skillist = ViewData["skil"] as IEnumerable<WebApplication1.Models.skil>;
+    var workexprencelist = ViewData["woekexprences"] as IEnumerable<WebApplication1.Models.workexprence>;
+    var workplatfromlist = ViewData["workplatfrom"] as IEnumerable<WebApplication1.Models.workplatfrom>;
+
+}
+
+<div>
+    <div class="row">
+        <div class="col-lg-3">
+           
+            <div class="card">
+                <h5>profile</h5>
+                @foreach (var item in emplist)
+                {
+                    <center>
+                        <img src="~/Image/@item.profile_pic" width="100%" height="100%" />
+                        <input value="@item.fullname" disabled style="border:none" /><br />
+                        <input value="@item.dob" disabled style="border:none" /><br />
+                        <input value="@item.location" disabled style="border:none" />,<input value="@item.countryname" disabled style="border:none" /><br />
+                        <input value="@item.email" disabled style="border:none" /><br />
+                        <input value="@item.phone" disabled style="border:none" /><br />
+                        <input value="@item.linkedin" disabled style="border:none" /><br />
+
+                    </center>
+                }
+
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <h5>skil</h5>
+                <div>
+                    @foreach (var item in skillist)
+                    {
+                        <input value="@item.skilname" disabled style="border:none" /><input value="@item.percentage" disabled style="border:none" />
+                    }
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3">
+       
+            <div class="card">
+                <h5>education</h5>
+                @foreach (var item in educationlist)
+                {
+                    <input value="@item.startingfrom.ToString(" MMM yyyy")" disabled style="border:none" /><input value="@item.collagename" disabled style="border:none" /><br /><input value="@item.description" disabled style="border:none" />
+                }
+
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <h4>Bio</h4>
+                @foreach (var item in emplist)
+                {
+                    <input value="@item.bio" disabled style="border:none" />
+                }
+
+                @foreach (var item in workplatfromlist)
+
+                {
+                    <div class="row">
+                    <div class="col-md-5">
+                        <div class="card">
+                            <input value="@item.platfromtitle" disabled style="border:none" /><input value="@item.wp_description" disabled style="border:none" />
+                        </div>
+                    </div>
+                    </div>
+                }
+
+
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3">
+            
+            <div class="card">
+                <h5>work Exprance</h5>
+                @foreach (var item in workexprencelist)
+                {
+                    <input value="@item.jobstartingfrom.ToString(" MMM yyyy")" disabled style="border:none" /><input value="@item.companyname" disabled style="border:none" /><br /><input value="@item.jobtitle" disabled style="border:none" />
+
+                }
+
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+@section styles{
+    <style>
+        .card {
+            border: solid;
+            border-width: thin;
+            margin: 10px;
+            padding: 10px;
+        }
+    </style>
+}
+
+
+
+
+
+

@@ -1,0 +1,335 @@
+﻿
+@{
+    ViewBag.Title = "create";
+}
+<div class="modal-content">
+    <h2>General Information</h2>
+    <div class="modal-body">
+        <div>
+            <div>
+                <img id="imgviewer" width="100" height="100" style="border:1px solid #000000" /><br />
+                <input name="file" id="FileUpload1" type="file" class="form-control" multiple />
+                <label>upload</label>
+            </div>
+            Name:<input id="name" type="text" />
+            dob<select id="getday">
+                @for (int i = 1; i <= 30; i++)
+                {
+                    <option value="@i">@i</option>
+                }
+            </select>
+            <select id="getmonth">
+                <option value="1">jan</option>
+                <option value="2">Feb</option>
+                <option value="3">March</option>
+                <option value="4">April</option>
+                <option value="5">May</option>
+                <option value="6">June</option>
+                <option value="7">July</option>
+                <option value="8">Aug</option>
+                <option value="9">Sept</option>
+                <option value="10">Oct</option>
+                <option value="11">Nov</option>
+                <option value="14">Dec</option>
+            </select>
+            <select id="getyear">
+                @for (int i = 2000; i <= 2030; i++)
+                {
+                    <option value="@i">@i</option>
+                }
+            </select><br />
+            Proffesion<input id="proffsion" type="text" />
+        </div>
+    </div>
+</div>
+
+<div class="modal-content">
+
+    <h2>ABOUT</h2>
+
+    <div class="modal-body">
+
+        bio<textarea id="bio"></textarea>
+    </div>
+</div>
+
+
+<div class="modal-content" id="dynamic_wpadd">
+
+    <h2>WORK PLATFROM</h2>
+    <button id="addwp" class="btn btn-primary">add</button>
+    <div class="modal-body">
+        PlatfromTittle<input name="platfromtitle[]" type="text" />
+        Description<textarea name="wp_description[]"></textarea>
+    </div>
+</div>
+<div class="modal-content">
+    <h4>Contact</h4>
+    <div class="modal-body">
+        <div class="row">
+            country <select id="country_id">
+                <option value="">select</option>
+            </select>
+            Address<input id="address" type="text" />
+        </div>
+        <div class="row">
+            Location<input id="location" type="text" />
+            phone<input id="phone" type="number" />
+        </div>
+        <div class="row">
+            Email<input id="email" type="email" />
+            Website<input id="website" type="text" />
+        </div>
+    </div>
+</div>
+
+
+<div class="modal-content">
+    <h4>Social</h4>
+    <div class="modal-body">
+        <div class="row">
+            LInkedin<input id="linkedin" type="text" />
+            twitter<input id="twitter" type="text" />
+        </div>
+        <div class="row">
+            Facebook<input id="facebook" type="text" />
+            Instgram<input id="instgram" type="text" />
+        </div>
+
+    </div>
+</div>
+<div class="modal-content" id="dynamic_skiladd">
+
+    <h2>skil</h2>
+    <button id="addskil" class="btn btn-primary">add</button>
+    <div class="modal-body">
+        Skilname<input name="Skil_name[]" type="text" />
+        Percentage<input name="Percentage[]" type="text" />
+    </div>
+</div>
+
+
+<div class="modal-content" id="dynamic_educationadd">
+
+    <h2>Education</h2>
+    <button id="addeducation" class="btn btn-primary">add</button>
+    <div class="modal-body">
+        collagenamename<input name="collagename[]" type="text" />
+        starting From<select name="startingmonth[]">
+            <option value="1">jan</option>
+            <option value="2">Feb</option>
+            <option value="3">March</option>
+            <option value="4">April</option>
+            <option value="5">May</option>
+            <option value="6">June</option>
+            <option value="7">July</option>
+            <option value="8">Aug</option>
+            <option value="9">Sept</option>
+            <option value="10">Oct</option>
+            <option value="11">Nov</option>
+            <option value="14">Dec</option>
+        </select>
+        <select name="startingyear[]">
+            @for (int i = 2000; i <= 2030; i++)
+            {
+                <option value="@i">@i</option>
+            }
+        </select>
+        Ending to<select name="endingingmonth[]">
+            <option value="1">jan</option>
+            <option value="2">Feb</option>
+            <option value="3">March</option>
+            <option value="4">April</option>
+            <option value="5">May</option>
+            <option value="6">June</option>
+            <option value="7">July</option>
+            <option value="8">Aug</option>
+            <option value="9">Sept</option>
+            <option value="10">Oct</option>
+            <option value="11">Nov</option>
+            <option value="14">Dec</option>
+        </select>
+        <select name="endingingyear[]">
+            @for (int i = 2000; i <= 2030; i++)
+            {
+                <option value="@i">@i</option>
+            }
+        </select><br />
+
+        Description<textarea name="description[]"></textarea>
+    </div>
+</div>
+
+
+<div class="modal-content" id="dynamic_workexprance">
+
+    <h2>WorkExprance</h2>
+    <button id="addworkexprance" class="btn btn-primary">add</button>
+    <div class="modal-body">
+        companyname<input name="companyname[]" type="text" />
+        jobtitle<input name="jobtitle[]" type="text" />
+        location<input name="joblocation[]" type="text" />
+        starting From<select name="jobstartingmonth[]">
+            <option value="1">jan</option>
+            <option value="2">Feb</option>
+            <option value="3">March</option>
+            <option value="4">April</option>
+            <option value="5">May</option>
+            <option value="6">June</option>
+            <option value="7">July</option>
+            <option value="8">Aug</option>
+            <option value="9">Sept</option>
+            <option value="10">Oct</option>
+            <option value="11">Nov</option>
+            <option value="14">Dec</option>
+        </select>
+        <select name="jobstartingyear[]">
+            @for (int i = 2000; i <= 2030; i++)
+            {
+                <option value="@i">@i</option>
+            }
+        </select>
+        Ending to<select name="jobendingingmonth[]">
+            <option value="1">jan</option>
+            <option value="2">Feb</option>
+            <option value="3">March</option>
+            <option value="4">April</option>
+            <option value="5">May</option>
+            <option value="6">June</option>
+            <option value="7">July</option>
+            <option value="8">Aug</option>
+            <option value="9">Sept</option>
+            <option value="10">Oct</option>
+            <option value="11">Nov</option>
+            <option value="14">Dec</option>
+        </select>
+        <select name="jonendingingyear[]">
+            @for (int i = 2000; i <= 2030; i++)
+            {
+                <option value="@i">@i</option>
+            }
+        </select><br />
+
+        Description<textarea name="jobdescription[]"></textarea>
+    </div>
+</div>
+<button id="sdave" class="btn btn-danger">save</button>
+
+@section scripts{
+
+    <script>
+        $(function () {
+            var i = 1;
+            $("#addwp").on("click", function () {
+                i++;
+                $("#dynamic_wpadd").append('<ul id = "row' + i + '" class= "dynamic-added" > <li>PlatfromTittle<input type="text" name="platfromtitle[]" class="name_list" required />Description<input type="text" name="wp_description[]" class="name_list" required /><button type="button" name="remove" id="' + i + '" class="btn btn-danger btn_remove">X</button></li></ul >');
+
+            });
+            //skil
+            $("#addskil").on("click", function () {
+                i++;
+                $("#dynamic_skiladd").append('<ul id = "row' + i + '" class= "dynamic-added" > <li>Skilname<input type="text" name="Skil_name[]" class="name_list" required />Percentage<input type="text" name="Percentage[]" class="name_list" required /><button type="button" name="remove" id="' + i + '" class="btn btn-danger btn_remove">X</button></li></ul >');
+
+            });
+            //education
+            $("#addeducation").on("click", function () {
+                i++;
+                $("#dynamic_educationadd").append('<ul id = "row' + i + '" class= "dynamic-added" > <li>collagenamename<input type="text" name="collagename[]" class="name_list" required />starting From<select name="startingmonth[]"><option value="1">jan</option><option value="2">Feb</option><option value="3">March</option><option value="4">April</option><option value="5">May</option><option value="6">June</option><option value="7">July</option><option value="8">Aug</option><option value="9">Sept</option><option value="10">Oct</option><option value="11">Nov</option><option value="14">Dec</option></select> <select name="startingyear[]"> @for (int i = 2000; i <= 2030; i++){<option value="@i">@i</option>} </select>Ending to<select name="endingingmonth[]"><option value="1">jan</option><option value="2">Feb</option><option value="3">March</option><option value="4">April</option><option value="5">May</option><option value="6">June</option><option value="7">July</option><option value="8">Aug</option><option value="9">Sept</option><option value="10">Oct</option><option value="11">Nov</option><option value="14">Dec</option></select><select name="endingingyear[]"> @for (int i = 2000; i <= 2030; i++){<option value="@i">@i</option>}</select>Description<input type="text" name="description[]" class="name_list" required /><button type="button" name="remove" id="' + i + '" class="btn btn-danger btn_remove">X</button></li></ul >');
+
+            });
+            //workexprance
+            $("#addworkexprance").on("click", function () {
+                i++;
+                $("#dynamic_workexprance").append('<ul id = "row' + i + '" class= "dynamic-added" > <li>companyname<input type="text" name="companyname[]" class="name_list" required />jobtitle<input type="text" name="jobtitle[]" class="name_list" required />Location<input type="text" name="joblocation[]" class="name_list" required />starting From<select name="jobstartingmonth[]"><option value="1">jan</option><option value="2">Feb</option><option value="3">March</option><option value="4">April</option><option value="5">May</option><option value="6">June</option><option value="7">July</option><option value="8">Aug</option><option value="9">Sept</option><option value="10">Oct</option><option value="11">Nov</option><option value="14">Dec</option></select> <select name="jobstartingyear[]"> @for (int i = 2000; i <= 2030; i++){<option value="@i">@i</option>} </select>Ending to<select name="jobendingingmonth[]"><option value="1">jan</option><option value="2">Feb</option><option value="3">March</option><option value="4">April</option><option value="5">May</option><option value="6">June</option><option value="7">July</option><option value="8">Aug</option><option value="9">Sept</option><option value="10">Oct</option><option value="11">Nov</option><option value="14">Dec</option></select><select name="jonendingingyear[]"> @for (int i = 2000; i <= 2030; i++){<option value="@i">@i</option>}</select>Description<input type="text" name="jobdescription[]" class="name_list" required /><button type="button" name="remove" id="' + i + '" class="btn btn-danger btn_remove">X</button></li></ul >');
+
+            });
+            $(document).on('click', '.btn_remove', function () {
+                var button_id = $(this).attr("id");
+                $('#row' + button_id + '').remove();
+
+            });
+
+            $.get({
+                url: "/Employee/getcountry"
+            }).then(function (data) {
+                $.each(data, function (index, value) {
+                    $("#country_id").append(" <option value='" + value.id + "' >" + value.name + "</option>");
+                });
+            });
+        //ajax
+            $("#sdave").on("click", function () {
+                var day = $("#getday").val();
+                var month = $("#getmonth").val();
+                var year = $("#getyear").val();
+                var datebirth = year + '-' + month + '-' + day;
+                if (window.FormData !== undefined) {
+                    var fileUpload = $("#FileUpload1").get(0);
+                    var files = fileUpload.files;
+                    var fileData = new FormData();
+                    for (var i = 0; i < files.length; i++) {
+                        fileData.append(files[i].name, files[i]);
+                    }
+                    fileData.append("fullname", $("#name").val());
+                    fileData.append("profession", $("#proffsion").val());
+                    fileData.append("bio", $("#bio").val());
+                    fileData.append("dob", datebirth);
+                    fileData.append("address", $("#address").val());
+                    fileData.append("location", $("#location").val());
+                    fileData.append("phone", $("#phone").val());
+                    fileData.append("email", $("#email").val());
+                    fileData.append("website", $("#website").val());
+                    fileData.append("linkedin", $("#linkedin").val());
+                    fileData.append("twitter", $("#twitter").val());
+                    fileData.append("facebook", $("#facebook").val());
+                    fileData.append("instgram", $("#instgram").val());
+                    fileData.append("country_id", $("#country_id").val());
+                    
+                    $("input[name ='Skil_name[]']").get().forEach((x, i) => fileData.append('skilname[' + i + ']', x.value));
+                    $("input[name='Percentage[]']").get().forEach((x, i) => fileData.append('percentage[' + i + ']', x.value));
+                    $("input[name='platfromtitle[]']").get().forEach((x, i) => fileData.append('platfromtitle[' + i + ']', x.value));
+                    $("[name='wp_description[]']").get().forEach((x, i) => fileData.append('wp_description[' + i + ']', x.value));
+
+                    $("input[name='collagename[]']").get().forEach((x, i) => fileData.append('collagename[' + i + ']', x.value));
+                    $("[name='description[]']").get().forEach((x, i) => fileData.append('description[' + i + ']', x.value));
+                    $("[name='startingmonth[]']").get().forEach((x, i) => fileData.append('startingmonth[' + i + ']', x.value));
+                    $("[name='startingyear[]']").get().forEach((x, i) => fileData.append('startingyear[' + i + ']', x.value));
+                    $("[name='endingingmonth[]']").get().forEach((x, i) => fileData.append('endingmonth[' + i + ']', x.value));
+                    $("[name='endingingyear[]']").get().forEach((x, i) => fileData.append('endingyear[' + i + ']', x.value));
+
+                     $("input[name='companyname[]']").get().forEach((x, i) => fileData.append('companyname[' + i + ']', x.value));
+                     $("input[name='jobtitle[]']").get().forEach((x, i) => fileData.append('jobtitle[' + i + ']', x.value));
+                     $("input[name='joblocation[]']").get().forEach((x, i) => fileData.append('joblocation[' + i + ']', x.value));
+                     $("[name='jobdescription[]']").get().forEach((x, i) => fileData.append('jobdescription[' + i + ']', x.value));
+                     $("[name='jobstartingmonth[]']").get().forEach((x, i) => fileData.append('jobstartingmonth[' + i + ']', x.value));
+                     $("[name='jobstartingyear[]']").get().forEach((x, i) => fileData.append('jobstartingyear[' + i + ']', x.value));
+                     $("[name='jobendingingmonth[]']").get().forEach((x, i) => fileData.append('jobendingmonth[' + i + ']', x.value));
+                     $("[name='jonendingingyear[]']").get().forEach((x, i) => fileData.append('jobendingyear[' + i + ']', x.value));
+
+                    $.post({
+                        url: "/Employee/save",
+                        type: "POST",
+                        contentType: false,  
+                        processData: false,
+                        data: fileData
+                       
+
+                    }).then(function (msg) {
+                        alert(msg);
+                        window.location.href = "/Employee/Index";
+                    });
+                }
+
+            });
+
+
+            $("#FileUpload1").change(function (event) {
+                var files = event.target.files;
+                $("#imgviewer").attr("src", window.URL.createObjectURL(files[0]));
+            });
+
+        });
+    </script>
+
+
+
+}
